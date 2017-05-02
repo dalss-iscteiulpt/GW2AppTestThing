@@ -24,11 +24,11 @@ public class GemsNotifier {
 	public void notifyRatio() throws InterruptedException{
 		while(true){
 			Ratio currentRatio = getRatio();
-			System.out.println("Approx 100 Gems: "+currentRatio.gold+ " gold "+currentRatio.silver+" silver ");
+			System.out.println("Approx 100 Gems: "+currentRatio);
 			if(currentRatio.gold <= OBJECTIVEGOLD){
 				System.out.println("Objective Reached");
 			}
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		}
 	}
 	
@@ -46,6 +46,12 @@ public class GemsNotifier {
 		public Ratio(int gold, int silver ) {
 			this.gold = gold;
 			this.silver = silver;
+		}
+		
+		@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return gold+ " gold "+silver+" silver ";
 		}
 		
 	}
